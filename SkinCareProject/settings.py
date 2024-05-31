@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-%12uoi$pejuvsw4ou)r30)ni3i6gja(k^z(gt7-qn-ib9-rj0)'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['newage-skincare.com', '89.116.191.140']
 
 
 # Application definition
