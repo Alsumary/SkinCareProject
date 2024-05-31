@@ -1,0 +1,61 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    text-decoration: none;
+    list-style: none;
+  }
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    /* font-size: 95%; */
+  }
+
+  @keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+}
+/* input::-webkit-calendar-picker-indicator{
+  display: none;
+}
+
+input[type="date"]::-webkit-input-placeholder{ 
+  visibility: hidden !important;
+} */
+.shake {
+    animation: shake 0.5s;
+    animation-iteration-count: 1;
+}
+
+/* Example: Change background color of datepicker */
+.fb-datepicker {
+    background-color: #f0f0f0;
+}
+  
+  body {
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  }
+  .nav-shadow{
+    box-shadow: 1px 19px 31px 6px #00000030;
+    -webkit-box-shadow: 1px -1px 31px 6px #00000030;
+    -moz-box-shadow: 1px -1px 31px 6px #00000030;
+    transition: box-shadow 999ms;
+  }
+  .active{
+    color : gray;
+    background-color: rgb(29 78 216);
+  }
+  @media (min-width: 768px) { 
+    .active{
+      background-color : transparent;
+      color: rgb(29 78 216);
+      color: cyan;
+    }
+  }
+
+  

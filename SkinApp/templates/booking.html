@@ -1,0 +1,325 @@
+{% extends "layout.html" %} {% load static %}
+{% block title %} Booking {% endblock %}
+
+{% block body %}
+<div class=" flex items-center justify-center md:flex-row flex-col h-screen my-56">
+     <div class="lg:w-7/12 md:w-9/12 sm:w-10/12 mx-auto p-2">
+        <div class="bg-white shadow-lg rounded-lg overflow-hidden" id="forShaking">
+            <div class="text-xl md:text-2xl font-semibold flex justify-center mt-8">{{appSelected.title}}</div>
+            <div  class="flex items-center justify-center md:flex-row overflow-y-auto overflow-x-hidden z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] h-full">
+                <div class="w-full mx-auto p-4 h-full ">
+                    <!-- Modal content -->
+                        <!-- Modal body -->
+                        <div class="p-4 pt-0">
+                            <div class="flex justify-center mt-4 mb-12">
+                            <div inline-datepicker id="datepickerEl" ></div>
+                        </div>
+                        <div class="hidden" id="ddSelected"></div>
+                            <label class="text-sm font-medium text-gray-900 mb-2 block">
+                            Pick your time
+                            </label>
+                            <ul id="timetable" class="grid w-full grid-cols-3 gap-2 mb-5">
+                                <li>
+                                    <input type="radio" id="8-00-am" value="" class="hidden peer" name="timetable">
+                                    <label for="8-00-am"
+                                    class="inline-flex items-center justify-center w-full px-2 py-1 text-sm font-medium text-center hover:text-gray-900 bg-white border rounded-lg cursor-pointer text-gray-500 border-gray-200 peer-checked:border-blue-700 peer-checked:bg-blue-50 peer-checked:text-blue-700 hover:bg-gray-50">
+                                    8:00 AM
+                                    </label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="8-30-am" value="" class="hidden peer" name="timetable">
+                                    <label for="8-30-am"
+                                    class="inline-flex items-center justify-center w-full px-2 py-1 text-sm font-medium text-center hover:text-gray-900 bg-white border rounded-lg cursor-pointer text-gray-500 border-gray-200 peer-checked:border-blue-700 peer-checked:bg-blue-50 peer-checked:text-blue-700 hover:bg-gray-50">
+                                    8:30 AM
+                                    </label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="9-00-am" value="" class="hidden peer" name="timetable">
+                                    <label for="9-00-am"
+                                    class="inline-flex items-center justify-center w-full px-2 py-1 text-sm font-medium text-center hover:text-gray-900 bg-white border rounded-lg cursor-pointer text-gray-500 border-gray-200 peer-checked:border-blue-700 peer-checked:bg-blue-50 peer-checked:text-blue-700 hover:bg-gray-50">
+                                    9:00 AM
+                                    </label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="9-30-am" value="" class="hidden peer" name="timetable">
+                                    <label for="9-30-am"
+                                    class="inline-flex items-center justify-center w-full px-2 py-1 text-sm font-medium text-center hover:text-gray-900 bg-white border rounded-lg cursor-pointer text-gray-500 border-gray-200 peer-checked:border-blue-700 peer-checked:bg-blue-50 peer-checked:text-blue-700 hover:bg-gray-50">
+                                    9:30 AM
+                                    </label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="10-00-am" value="" class="hidden peer" name="timetable">
+                                    <label for="10-00-am"
+                                    class="inline-flex items-center justify-center w-full px-2 py-1 text-sm font-medium text-center hover:text-gray-900 bg-white border rounded-lg cursor-pointer text-gray-500 border-gray-200 peer-checked:border-blue-700 peer-checked:bg-blue-50 peer-checked:text-blue-700 hover:bg-gray-50">
+                                    10:00 AM
+                                    </label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="10-30-am" value="" class="hidden peer" name="timetable">
+                                    <label for="10-30-am"
+                                    class="inline-flex items-center justify-center w-full px-2 py-1 text-sm font-medium text-center hover:text-gray-900 bg-white border rounded-lg cursor-pointer text-gray-500 border-gray-200 peer-checked:border-blue-700 peer-checked:bg-blue-50 peer-checked:text-blue-700 hover:bg-gray-50">
+                                    10:30 AM
+                                    </label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="11-00-am" value="" class="hidden peer" name="timetable">
+                                    <label for="11-00-am"
+                                    class="inline-flex items-center justify-center w-full px-2 py-1 text-sm font-medium text-center hover:text-gray-900 bg-white border rounded-lg cursor-pointer text-gray-500 border-gray-200 peer-checked:border-blue-700 peer-checked:bg-blue-50 peer-checked:text-blue-700 hover:bg-gray-50">
+                                    11:00 AM
+                                    </label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="11-30-am" value="" class="hidden peer" name="timetable">
+                                    <label for="11-30-am"
+                                    class="inline-flex items-center justify-center w-full px-2 py-1 text-sm font-medium text-center hover:text-gray-900 bg-white border rounded-lg cursor-pointer text-gray-500 border-gray-200 peer-checked:border-blue-700 peer-checked:bg-blue-50 peer-checked:text-blue-700 hover:bg-gray-50">
+                                    11:30 AM
+                                    </label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="12-00-am" value="" class="hidden peer" name="timetable">
+                                    <label for="12-00-am"
+                                    class="inline-flex items-center justify-center w-full px-2 py-1 text-sm font-medium text-center hover:text-gray-900 bg-white border rounded-lg cursor-pointer text-gray-500 border-gray-200 peer-checked:border-blue-700 peer-checked:bg-blue-50 peer-checked:text-blue-700 hover:bg-gray-50">
+                                    12:00 AM
+                                    </label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="12-30-pm" value="" class="hidden peer" name="timetable">
+                                    <label for="12-30-pm"
+                                    class="inline-flex items-center justify-center w-full px-2 py-1 text-sm font-medium text-center hover:text-gray-900 bg-white border rounded-lg cursor-pointer text-gray-500 border-gray-200 peer-checked:border-blue-700 peer-checked:bg-blue-50 peer-checked:text-blue-700 hover:bg-gray-50">
+                                    12:30 PM
+                                    </label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="1-00-pm" value="" class="hidden peer" name="timetable">
+                                    <label for="1-00-pm"
+                                    class="inline-flex items-center justify-center w-full px-2 py-1 text-sm font-medium text-center hover:text-gray-900 bg-white border rounded-lg cursor-pointer text-gray-500 border-gray-200 peer-checked:border-blue-700 peer-checked:bg-blue-50 peer-checked:text-blue-700 hover:bg-gray-50">
+                                    01:00 PM
+                                    </label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="1-30-pm" value="" class="hidden peer" name="timetable">
+                                    <label for="1-30-pm"
+                                    class="inline-flex items-center justify-center w-full px-2 py-1 text-sm font-medium text-center hover:text-gray-900 bg-white border rounded-lg cursor-pointer text-gray-500 border-gray-200 peer-checked:border-blue-700 peer-checked:bg-blue-50 peer-checked:text-blue-700 hover:bg-gray-50">
+                                    01:30 PM
+                                    </label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="2-00-pm" value="" class="hidden peer" name="timetable">
+                                    <label for="2-00-pm"
+                                    class="inline-flex items-center justify-center w-full px-2 py-1 text-sm font-medium text-center hover:text-gray-900 bg-white border rounded-lg cursor-pointer text-gray-500 border-gray-200 peer-checked:border-blue-700 peer-checked:bg-blue-50 peer-checked:text-blue-700 hover:bg-gray-50">
+                                    02:00 PM
+                                    </label>
+
+                                </li>
+                                <li>
+                                    <input type="radio" id="2-30-pm" value="" class="hidden peer" name="timetable">
+                                    <label for="2-30-pm"
+                                    class="inline-flex items-center justify-center w-full px-2 py-1 text-sm font-medium text-center hover:text-gray-900 bg-white border rounded-lg cursor-pointer text-gray-500 border-gray-200 peer-checked:border-blue-700 peer-checked:bg-blue-50 peer-checked:text-blue-700 hover:bg-gray-50">
+                                    02:30 PM
+                                    </label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="3-00-pm" value="" class="hidden peer" name="timetable">
+                                    <label for="3-00-pm"
+                                    class="inline-flex items-center justify-center w-full px-2 py-1 text-sm font-medium text-center hover:text-gray-900 bg-white border rounded-lg cursor-pointer text-gray-500 border-gray-200 peer-checked:border-blue-700 peer-checked:bg-blue-50 peer-checked:text-blue-700 hover:bg-gray-50">
+                                    03:00 PM
+                                    </label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="3-30-pm" value="" class="hidden peer" name="timetable">
+                                    <label for="3-30-pm"
+                                    class="inline-flex items-center justify-center w-full px-2 py-1 text-sm font-medium text-center hover:text-gray-900 bg-white border rounded-lg cursor-pointer text-gray-500 border-gray-200 peer-checked:border-blue-700 peer-checked:bg-blue-50 peer-checked:text-blue-700 hover:bg-gray-50">
+                                    03:30 PM
+                                    </label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="4-00-pm" value="" class="hidden peer" name="timetable">
+                                    <label for="4-00-pm"
+                                    class="inline-flex items-center justify-center w-full px-2 py-1 text-sm font-medium text-center hover:text-gray-900 bg-white border rounded-lg cursor-pointer text-gray-500 border-gray-200 peer-checked:border-blue-700 peer-checked:bg-blue-50 peer-checked:text-blue-700 hover:bg-gray-50">
+                                    04:00 PM
+                                    </label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="4-30-pm" value="" class="hidden peer" name="timetable">
+                                    <label for="4-30-pm"
+                                    class="inline-flex items-center justify-center w-full px-2 py-1 text-sm font-medium text-center hover:text-gray-900 bg-white border rounded-lg cursor-pointer text-gray-500 border-gray-200 peer-checked:border-blue-700 peer-checked:bg-blue-50 peer-checked:text-blue-700 hover:bg-gray-50">
+                                    04:30 PM
+                                    </label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="5-00-pm" value="" class="hidden peer" name="timetable">
+                                    <label for="5-00-pm"
+                                    class="inline-flex items-center justify-center w-full px-2 py-1 text-sm font-medium text-center hover:text-gray-900 bg-white border rounded-lg cursor-pointer text-gray-500 border-gray-200 peer-checked:border-blue-700 peer-checked:bg-blue-50 peer-checked:text-blue-700 hover:bg-gray-50">
+                                    05:00 PM
+                                    </label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="5-30-pm" value="" class="hidden peer" name="timetable">
+                                    <label for="5-30-pm"
+                                    class="inline-flex items-center justify-center w-full px-2 py-1 text-sm font-medium text-center hover:text-gray-900 bg-white border rounded-lg cursor-pointer text-gray-500 border-gray-200 peer-checked:border-blue-700 peer-checked:bg-blue-50 peer-checked:text-blue-700 hover:bg-gray-50">
+                                    05:30 PM
+                                    </label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="6-00-pm" value="" class="hidden peer" name="timetable">
+                                    <label for="6-00-pm"
+                                    class="inline-flex items-center justify-center w-full px-2 py-1 text-sm font-medium text-center hover:text-gray-900 bg-white border rounded-lg cursor-pointer text-gray-500 border-gray-200 peer-checked:border-blue-700 peer-checked:bg-blue-50 peer-checked:text-blue-700 hover:bg-gray-50">
+                                    06:00 PM
+                                    </label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="6-30-pm" value="" class="hidden peer" name="timetable">
+                                    <label for="6-30-pm"
+                                    class="inline-flex items-center justify-center w-full px-2 py-1 text-sm font-medium text-center hover:text-gray-900 bg-white border rounded-lg cursor-pointer text-gray-500 border-gray-200 peer-checked:border-blue-700 peer-checked:bg-blue-50 peer-checked:text-blue-700 hover:bg-gray-50">
+                                    06:30 PM
+                                    </label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="7-00-pm" value="" class="hidden peer" name="timetable">
+                                    <label for="7-00-pm"
+                                    class="inline-flex items-center justify-center w-full px-2 py-1 text-sm font-medium text-center hover:text-gray-900 bg-white border rounded-lg cursor-pointer text-gray-500 border-gray-200 peer-checked:border-blue-700 peer-checked:bg-blue-50 peer-checked:text-blue-700 hover:bg-gray-50">
+                                    07:00 PM
+                                    </label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="7-30-pm" value="" class="hidden peer" name="timetable">
+                                    <label for="7-30-pm"
+                                    class="inline-flex items-center justify-center w-full px-2 py-1 text-sm font-medium text-center hover:text-gray-900 bg-white border rounded-lg cursor-pointer text-gray-500 border-gray-200 peer-checked:border-blue-700 peer-checked:bg-blue-50 peer-checked:text-blue-700 hover:bg-gray-50">
+                                    07:30 PM
+                                    </label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="8-00-pm" value="" class="hidden peer" name="timetable">
+                                    <label for="8-00-pm"
+                                    class="inline-flex items-center justify-center w-full px-2 py-1 text-sm font-medium text-center hover:text-gray-900 bg-white border rounded-lg cursor-pointer text-gray-500 border-gray-200 peer-checked:border-blue-700 peer-checked:bg-blue-50 peer-checked:text-blue-700 hover:bg-gray-50">
+                                    08:00 PM
+                                    </label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="8-30-pm" value="" class="hidden peer" name="timetable">
+                                    <label for="8-30-pm"
+                                    class="inline-flex items-center justify-center w-full px-2 py-1 text-sm font-medium text-center hover:text-gray-900 bg-white border rounded-lg cursor-pointer text-gray-500 border-gray-200 peer-checked:border-blue-700 peer-checked:bg-blue-50 peer-checked:text-blue-700 hover:bg-gray-50">
+                                    08:30 PM
+                                    </label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="9-00-pm" value="" class="hidden peer" name="timetable">
+                                    <label for="9-00-pm"
+                                    class="inline-flex items-center justify-center w-full px-2 py-1 text-sm font-medium text-center hover:text-gray-900 bg-white border rounded-lg cursor-pointer text-gray-500 border-gray-200 peer-checked:border-blue-700 peer-checked:bg-blue-50 peer-checked:text-blue-700 hover:bg-gray-50">
+                                    09:00 PM
+                                    </label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="9-30-pm" value="" class="hidden peer" name="timetable">
+                                    <label for="9-30-pm"
+                                    class="inline-flex items-center justify-center w-full px-2 py-1 text-sm font-medium text-center hover:text-gray-900 bg-white border rounded-lg cursor-pointer text-gray-500 border-gray-200 peer-checked:border-blue-700 peer-checked:bg-blue-50 peer-checked:text-blue-700 hover:bg-gray-50">
+                                    09:30 PM
+                                    </label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="10-00-pm" value="" class="hidden peer" name="timetable">
+                                    <label for="10-00-pm"
+                                    class="inline-flex items-center justify-center w-full px-2 py-1 text-sm font-medium text-center hover:text-gray-900 bg-white border rounded-lg cursor-pointer text-gray-500 border-gray-200 peer-checked:border-blue-700 peer-checked:bg-blue-50 peer-checked:text-blue-700 hover:bg-gray-50">
+                                    10:00 PM
+                                    </label>
+                                </li>
+                            </ul>
+                            <div class="grid grid-cols-2 gap-2">
+                                <button type="button" data-modal-target="cont-modal" data-modal-toggle="cont-modal" id="contBtn" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 focus:outline-none">Continue</button>
+                                <button type="button" data-modal-hide="timepicker-modal" class="py-2.5 px-5 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100">Discard</button>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <ul class="hidden">
+        {% for appointment in appoints %}
+        <li class="aps">
+            <strong>Date:</strong> <input type="date" class="appointment-date" value="{{ appointment.date|date:'Y-m-d' }}"><br>
+            <strong>Time:</strong> <input type="time" class="appointment-time" value="{{ appointment.time|time:'H:i' }}"><br>
+            <strong>Description:</strong> {{ appointment.description }}
+        </li>
+        {% endfor %}
+    </ul>
+    <div id="cont-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+        <div class="relative p-4 w-full max-w-md max-h-full">
+            <!-- Modal content -->
+            <div class="relative bg-white rounded-lg shadow ">
+                <!-- Modal header -->
+                <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t ">
+                    <h3 class="text-lg font-semibold text-gray-900 ">
+                        Book form
+                    </h3>
+                    <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center  " data-modal-toggle="cont-modal">
+                        <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                        </svg>
+                        <span class="sr-only">Close modal</span>
+                    </button>
+                </div>
+                <!-- Modal body -->
+                <form class="p-4 md:p-5" id="subForm" method="post">
+                    {% csrf_token %}
+                    <div class="grid gap-4 mb-4 md:grid-cols-2 grid-cols-1">
+                        <div class="col-span-2 sm:col-span-1">
+                        <div class="relative max-w-sm twiceInputs">
+                                <div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none ">
+                                <svg class="w-4 h-4 text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"/>
+                                </svg>
+                                </div>
+                                <input type="date" name="date" readonly id="date-modal-value" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5" placeholder="Select date">
+                            </div>
+                        </div>
+                        <div class="col-span-2 sm:col-span-1">
+
+                          <div class="relative max-w-sm twiceInputs">
+                                <div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
+                                    <svg class="w-4 h-4 text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                                        <path fill-rule="evenodd" d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12Zm11-4a1 1 0 1 0-2 0v4a1 1 0 0 0 .293.707l3 3a1 1 0 0 0 1.414-1.414L13 11.586V8Z" clip-rule="evenodd"/>
+                                    </svg>
+                                </div>
+                                <input type="time" name="time" readonly id="time-modal-value" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5" placeholder="Select time">
+                            </div>
+                        </div>
+                        <div class="col-span-2">
+                            <label for="name" class="block mb-2 text-sm font-medium text-gray-900 ">Name <span class="text-red-400 font-bold">*</span></label>
+                            <input type="text" name="name" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5  " placeholder="Type your name">
+                        </div>
+                        <!-- <div class="col-span-2">
+                            <label for="Type" class="block mb-2 text-sm font-medium text-gray-900">Category <span class="text-red-400 font-bold">*</span></label>
+                            <select id="Type" name="Type" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5">
+                                {% for typeApp in typeApps %}
+                                <option value="{{typeApp.id}}">{{typeApp.title}}</option>
+                                {% endfor %}
+                            </select>
+                        </div> -->
+                        <div class="col-span-2 sm:col-span-1">
+                            <label for="email" class="block mb-2 text-sm font-medium text-gray-900 ">Email address <span class="text-red-400 font-bold">*</span></label>
+                            <input type="text" name="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5  " placeholder="example@gmail.com">
+                        </div>
+                        <div class="col-span-2 sm:col-span-1">
+                            <label for="phone" class="block mb-2 text-sm font-medium text-gray-900 ">Phone number <span class="text-red-400 font-bold">*</span></label>
+                            <input type="number" name="phone" id="phone" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5  " placeholder="07*********">
+                        </div>
+                        <div class="col-span-2">
+                            <label for="description" class="block mb-2 text-sm font-medium text-gray-900 ">Description</label>
+                            <textarea id="description" name="description" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500  " placeholder="Write description"></textarea>                    
+                        </div>
+                    </div>
+                    <button type="submit" id="modalSubmit" class="text-white inline-flex items-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+                        <svg class="me-1 -ms-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd"></path></svg>
+                        Book now
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div> 
+</div>
+<script src="https://unpkg.com/flowbite@1.3.0/dist/datepicker.min.js"></script>
+<script>
+
+</script>
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends "layout.html" %} {% load static %}
+{% block title %} Appointment choose {% endblock %}
+
+{% block body %}
+
+   <div class="flex justify-center">
+    <ul class="w-[90%] md:w-[60%] divide-y divide-gray-200 my-32">
+      <h1 class="text-lg md:text-xl font-bold">Choose Appointment :</h1>
+      {% for cat in category %}
+         <h2 class="text-sm md:text-md truncate text-gray-500">{{cat.title}}</h1>
+         {% for typeApp in typeApps %}
+            {% if typeApp.category.id == cat.id %}
+            <div>
+               <li class="p-2 border border-gray-400 md:p-4 rounded-lg my-1">
+                  <div class="flex items-center space-x-4 rtl:space-x-reverse">
+                     <div class="flex-1 min-w-0">
+                        <div class="text-sm font-medium text-gray-900 truncate">
+                           {{typeApp.title|linebreaks}}
+                        </div>
+                        {% if typeApp.description%}
+                        <div class="text-sm text-gray-500 truncate">
+                           {{typeApp.description|linebreaks}}
+                        </div>
+                        {% endif %}
+                     </div>
+                     <div class="inline-flex items-center text-base font-semibold text-gray-900">
+                        <a type="button" href="{% url 'booking' treat_id=typeApp.id %}" class="text-white bg-[#0a1c42] border border-gray-300 focus:outline-none hover:bg-[#2e588c] focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-1.5 py-2">Book Now</a>
+                     </div>
+                  </div>
+               </li>
+            </div>
+            {% endif %}
+         {% endfor %}
+         <hr class="my-4">
+      {% endfor %}
+        
+   </ul>
+</div>
+{% endblock %}
