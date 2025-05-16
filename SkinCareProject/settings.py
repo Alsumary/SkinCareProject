@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-%12uoi$pejuvsw4ou)r30)ni3i6gja(k^z(gt7-qn-ib9-rj0)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['newage-skincare.com', '89.116.191.140']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
