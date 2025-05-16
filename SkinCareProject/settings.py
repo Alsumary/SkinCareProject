@@ -52,6 +52,18 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'SkinCareProject.urls'
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://newage-skincare.com',
+    'https://www.newage-skincare.com',
+    'https://skincareproject.onrender.com',
+]
+
+CORS_ALLOWED_ORIGINS = [
+    "https://newage-skincare.com",
+    "https://www.newage-skincare.com",
+    'https://skincareproject.onrender.com',
+]
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
